@@ -1,0 +1,85 @@
+/* General Body & Font Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+header, main, footer {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+header {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+h1, h2, h3 { color: #0d1b2a; }
+
+/* Form Styles */
+form, .gallery, .limitations {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-top: 30px;
+}
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+input[type="email"], input[type="tel"], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type="file"] { width: 100%; padding: 5px; }
+.image-preview {
+    display: none; /* Hidden by default */
+    max-width: 150px;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+.radio-group { display: flex; align-items: center; margin-bottom: 10px; }
+.radio-group input[type="radio"] { margin-right: 10px; }
+
+/* Button Styles */
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover { background-color: #0056b3; }
+button:disabled { background-color: #a9a9a9; cursor: not-allowed; }
+
+/* Gallery & Limitations */
+.gallery-item { text-align: center; }
+.gallery-item img { max-width: 100%; border-radius: 4px; margin-bottom: 10px; }
+.limitations ul { padding-left: 20px; }
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+    .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+}
+
+/* Success Page */
+.success-page { background: #fff; padding: 40px; border-radius: 8px; margin-top: 40px; text-align: center; }
