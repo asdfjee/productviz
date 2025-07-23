@@ -4,23 +4,26 @@
 /* General Body & Font Styles */
 body {
     font-family: 'Lato', sans-serif;
-    /* The body background is now a neutral off-white */
-    background-color: #f8f9fa; 
+    /* --- COLOR SWAPPED HERE --- */
+    background-color: #fff5ed; /* The main background is now the warm color */
     color: #333;
     line-height: 1.6;
     margin: 0;
-    padding: 0; /* Removed padding to allow header to be full-width */
+    padding: 0; 
 }
 
-/* --- NEW: Full-width Header Style --- */
+/* Full-width Header Style */
 header {
-    background-color: #fff5ed; /* The color you wanted for the header */
-    padding: 40px 20px; /* Vertical and horizontal padding */
+    /* --- COLOR SWAPPED HERE --- */
+    background-color: #ffffff; /* The header is now white */
+    padding: 40px 20px;
     text-align: center;
-    margin-bottom: 40px; /* Creates space between header and main content */
+    margin-bottom: 40px; 
+    /* This adds a subtle line to separate the white header from the content */
+    border-bottom: 1px solid #e9ecef;
 }
 
-/* --- NEW: Style for the header's content wrapper --- */
+/* Style for the header's content wrapper */
 .header-content {
     max-width: 700px;
     margin: 0 auto;
@@ -29,8 +32,8 @@ header {
 /* Main content and footer are centered */
 main, footer {
     max-width: 700px;
-    margin: 0 auto 40px auto; /* Centered, with bottom margin */
-    padding: 0 20px; /* Padding for mobile screens */
+    margin: 0 auto 40px auto;
+    padding: 0 20px;
     text-align: center;
 }
 
