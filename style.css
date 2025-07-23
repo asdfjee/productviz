@@ -59,7 +59,7 @@ input[type="file"] { width: 100%; padding: 5px; }
 button {
     width: 100%;
     padding: 15px;
-    background-color: ##523b36;
+    background-color: #523b36; /* Fixed typo here */
     color: white;
     border: none;
     border-radius: 5px;
@@ -68,12 +68,19 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-button:hover { background-color: ##3d1e01; }
-button:disabled { background-color: ##f5e1d3; cursor: not-allowed; }
+button:hover { background-color: #3d1e01; } /* Fixed typo here */
+button:disabled { background-color: #f5e1d3; cursor: not-allowed; } /* Fixed typo here */
 
 /* Gallery & Limitations */
 .gallery-item { text-align: center; }
 .gallery-item img { max-width: 100%; border-radius: 4px; margin-bottom: 10px; }
+
+/* --- THIS IS THE ADDED CODE --- */
+.limitations {
+    text-align: left; /* This aligns the 'Please Note' section to the left */
+}
+/* ----------------------------- */
+
 .limitations ul { padding-left: 20px; }
 
 /* Desktop Styles */
