@@ -1,122 +1,145 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRODUCT VIZ</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* Import the Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
-    <header>
-        <h1>PRODUCT VIZ</h1>
-        <p class="tagline">Product Visualization; see any piece of furniture in your room.</p>
-        <p>Below, you can upload a photo of your space, and a photo of the product to get started!</p>
-        <p><a href="/how-it-works.html">Learn more about how it works</a></p>
-    </header>
+/* General Body & Font Styles */
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #fff5ed;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0; 
+}
 
-    <main>
-        <!-- This form is set up for Netlify -->
-        <form name="order" method="POST" data-netlify="true" enctype="multipart/form-data" action="/success.html">
-            <!-- (The form code remains the same, so it's omitted for brevity) -->
-            <!-- STEP 1: UPLOAD AND DETAILS -->
-            <div id="step-1">
-                <h2>Step 1: Upload Your Photos</h2>
-                
-                <div class="form-group">
-                    <label for="space_photo">1. Upload a Photo of Your Space (Required)</label>
-                    <input type="file" id="space_photo" name="space_photo" accept="image/*" required>
-                    <img id="space-preview" class="image-preview" src="#" alt="Your space photo preview" />
-                </div>
+/* Full-width Header Style */
+header {
+    background-color: #ffffff;
+    padding: 25px 20px;
+    text-align: center;
+    margin-bottom: 40px; 
+    border-bottom: 1px solid #e9ecef;
+}
 
-                <div class="form-group">
-                    <label for="furniture_photo">2. Upload a Photo of Your Furniture (Required)</label>
-                    <input type="file" id="furniture_photo" name="furniture_photo" accept="image/*" required>
-                    <img id="furniture-preview" class="image-preview" src="#" alt="Your furniture photo preview" />
-                </div>
-                
-                <div class="form-group">
-                    <label for="customer_email">3. Your Email Address (Required)</label>
-                    <input type="email" id="customer_email" name="customer_email" placeholder="you@example.com" required>
-                </div>
+/* --- NEW STYLE FOR HEADER TEXT --- */
+header p {
+    font-size: 0.9em; /* Makes the font smaller */
+    margin-top: 8px;    /* Reduces space above the paragraphs */
+    margin-bottom: 8px; /* Reduces space below the paragraphs */
+}
 
-                <div class="form-group">
-                    <label for="notes">4. Optional: Room/Furniture Dimensions or Notes</label>
-                    <textarea id="notes" name="notes" rows="4" placeholder="e.g., 'The wall is 10ft wide.'"></textarea>
-                </div>
-                
-                <button type="button" id="next-step-btn">Next Step</button>
-            </div>
+/* Style for the header's content wrapper */
+.header-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
 
-            <!-- STEP 2: PRODUCT CHOICE AND SUBMISSION -->
-            <div id="step-2" style="display: none;">
-                <h2>Step 2: Choose Your Product</h2>
-                
-                <div class="form-group">
-                    <label>Choose Your Product:</label>
-                    <div class="radio-group">
-                        <input type="radio" id="product_photo" name="product_choice" value="Photo" checked>
-                        <label for="product_photo">Photo-realistic Image</label>
-                    </div>
-                    <div class="radio-group">
-                        <input type="radio" id="product_movie" name="product_choice" value="Movie">
-                        <label for="product_movie">Short Video Fly-through</label>
-                    </div>
-                </div>
+/* Main content and footer are centered */
+main, footer {
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
 
-                <div class="form-group">
-                    <label>How should we send it?</label>
-                    <div class="radio-group">
-                        <input type="radio" id="delivery_email" name="delivery_method" value="Email" checked>
-                        <label for="delivery_email">Email</label>
-                    </div>
-                    <div class="radio-group">
-                        <input type="radio" id="delivery_text" name="delivery_method" value="Text">
-                        <label for="delivery_text">Text Message</label>
-                    </div>
-                </div>
+h1, h2, h3 { 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0d1b2a; 
+}
 
-                <div id="phone-input-container" class="form-group" style="display: none;">
-                    <label for="customer_phone">Your Phone Number</label>
-                    <input type="tel" id="customer_phone" name="customer_phone" placeholder="123-456-7890">
-                </div>
-                
-                <button type="submit" id="submit-btn">Complete My Order</button>
-            </div>
-        </form>
+/* The "White Card" style for the form and content sections */
+form, .gallery, .limitations {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-top: 30px; 
+}
 
-        <!-- UPDATED "HOW IT WORKS" DEMO SECTION -->
-        <section class="gallery">
-            <h2>See How It Works</h2>
-            <div class="gallery-item">
-                <!-- Original Photo on the left -->
-                <img src="https://via.placeholder.com/300x200.png?text=Original+Photo" alt="Original photo of the room">
-                <!-- Generated Video on the right -->
-                <video src="‎IMG_0106.MOV" controls loop muted autoplay playsinline alt="Generated video showing furniture in the room"></video>
-            </div>
-            <p class="explanation">The video on the right was generated to show the furniture in situ.</p>
-            <a href="/gallery.html" class="gallery-link">View Full Gallery →</a>
-        </section>
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+input[type="email"], input[type="tel"], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type="file"] { width: 100%; padding: 5px; }
+.image-preview {
+    display: none; /* Hidden by default */
+    max-width: 150px;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+.radio-group { display: flex; align-items: center; margin-bottom: 10px; }
+.radio-group input[type="radio"] { margin-right: 10px; }
 
+/* Button Styles */
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #523b36;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover { background-color: #3d1e01; }
+button:disabled { background-color: #f5e1d3; cursor: not-allowed; }
 
-        <!-- UPDATED BETA NOTICE SECTION -->
-        <section class="limitations">
-            <h3>Beta Notice & Limitations</h3>
-            <p>
-                Please be aware that PRODUCT VIZ is currently in its beta (testing) phase. This service is primarily intended for design professionals and early adopters to test and provide feedback.
-            </p>
-            <p>
-                While we strive for high accuracy, the final appearance of furniture (scale, perspective, lighting, and texture) may not be perfect. Thank you for your understanding and for helping us improve our platform.
-            </p>
-        </section>
+/* Gallery, Demo & Limitations */
+.gallery-item { text-align: center; }
+.gallery-item img, .gallery-item video { 
+    max-width: 100%; 
+    border-radius: 4px; 
+    margin-bottom: 10px; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.explanation {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 0;
+}
+.gallery-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #523b36;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.limitations {
+    text-align: left; 
+    font-size: 0.9em;
+}
 
-    </main>
+.limitations ul { padding-left: 20px; }
 
-    <!-- UPDATED FOOTER -->
-    <footer>
-        <p>© 2024 PRODUCT VIZ | Contact: <a href="mailto:team@productviz.com">team@productviz.com</a></p>
-    </footer>
+/* Desktop Styles */
+@media (min-width: 768px) {
+    .gallery-item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        align-items: center;
+    }
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+/* Success Page */
+.success-page { background: #fff; padding: 40px; border-radius: 8px; margin-top: 40px; text-align: center; }
