@@ -3,7 +3,6 @@
 
 /* General Body & Font Styles */
 body {
-    /* STEP 2: Set the new font for the body text */
     font-family: 'Lato', sans-serif;
     background-color: #fff5ed;
     color: #333;
@@ -11,31 +10,27 @@ body {
     margin: 0;
     padding: 20px;
 }
-
-/* The header font remains untouched because of this specific rule */
 header, main, footer {
     max-width: 700px;
     margin: 0 auto;
     text-align: center;
 }
-header {
-    margin-bottom: 30px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 20px;
-}
+/* --- The old header style block has been removed from here --- */
+
 h1, h2, h3 { 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: #0d1b2a; 
 }
 
-/* Form Styles */
-form, .gallery, .limitations {
+/* --- 'header' has been ADDED to this style group --- */
+header, form, .gallery, .limitations {
     background: #ffffff;
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    margin-top: 30px;
+    margin-top: 30px; /* This now creates space above the header */
 }
+
 .form-group {
     margin-bottom: 20px;
     text-align: left;
@@ -86,7 +81,7 @@ button:disabled { background-color: #f5e1d3; cursor: not-allowed; }
     max-width: 100%; 
     border-radius: 4px; 
     margin-bottom: 10px; 
-    display: block; /* Helps with spacing */
+    display: block;
     margin-left: auto;
     margin-right: auto;
 }
