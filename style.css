@@ -4,8 +4,7 @@
 /* General Body & Font Styles */
 body {
     font-family: 'Lato', sans-serif;
-    /* --- COLOR SWAPPED HERE --- */
-    background-color: #fff5ed; /* The main background is now the warm color */
+    background-color: #fff5ed;
     color: #333;
     line-height: 1.6;
     margin: 0;
@@ -14,12 +13,11 @@ body {
 
 /* Full-width Header Style */
 header {
-    /* --- COLOR SWAPPED HERE --- */
-    background-color: #ffffff; /* The header is now white */
-    padding: 40px 20px;
+    background-color: #ffffff;
+    /* --- PADDING REDUCED HERE --- */
+    padding: 25px 20px; /* Was 40px, now 25px for top/bottom */
     text-align: center;
     margin-bottom: 40px; 
-    /* This adds a subtle line to separate the white header from the content */
     border-bottom: 1px solid #e9ecef;
 }
 
