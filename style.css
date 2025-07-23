@@ -77,7 +77,7 @@ button:disabled { background-color: #f5e1d3; cursor: not-allowed; }
 
 .limitations {
     text-align: left; /* This aligns the 'Please Note' section to the left */
-    font-size: 0.6em;  /* --- THIS IS THE NEW LINE TO MAKE THE FONT SMALLER --- */
+    font-size: 0.8em;  /* --- THIS IS THE NEW LINE TO MAKE THE FONT SMALLER --- */
 }
 
 .limitations ul { padding-left: 20px; }
