@@ -10,17 +10,15 @@
 
     <header>
         <h1>PRODUCT VIZ</h1>
-        <!-- YOUR NEW TEXT IS KEPT HERE -->
         <p class="tagline">Product Visualization; see any piece of furniture in your room.</p>
         <p>Below, you can upload a photo of your space, and a photo of the product to get started!</p>
-        <!-- END OF YOUR NEW TEXT -->
         <p><a href="/how-it-works.html">Learn more about how it works</a></p>
     </header>
 
     <main>
         <!-- This form is set up for Netlify -->
         <form name="order" method="POST" data-netlify="true" enctype="multipart/form-data" action="/success.html">
-
+            <!-- (The form code remains the same, so it's omitted for brevity) -->
             <!-- STEP 1: UPLOAD AND DETAILS -->
             <div id="step-1">
                 <h2>Step 1: Upload Your Photos</h2>
@@ -85,17 +83,21 @@
                 
                 <button type="submit" id="submit-btn">Complete My Order</button>
             </div>
-
         </form>
 
-        <!-- GALLERY SECTION -->
+        <!-- UPDATED "HOW IT WORKS" DEMO SECTION -->
         <section class="gallery">
-            <h2>Examples of Our Work</h2>
+            <h2>See How It Works</h2>
             <div class="gallery-item">
-                <img src="https://via.placeholder.com/300x200.png?text=Before" alt="Before example 1">
-                <img src="https://via.placeholder.com/300x200.png?text=After" alt="After example 1">
+                <!-- Original Photo on the left -->
+                <img src="https://via.placeholder.com/300x200.png?text=Original+Photo" alt="Original photo of the room">
+                <!-- Generated Video on the right -->
+                <video src="https://i.imgur.com/uVj4n52.mp4" controls loop muted autoplay playsinline alt="Generated video showing furniture in the room"></video>
             </div>
+            <p class="explanation">The video on the right was generated to show the furniture in situ.</p>
+            <a href="/gallery.html" class="gallery-link">View Full Gallery →</a>
         </section>
+
 
         <!-- UPDATED BETA NOTICE SECTION -->
         <section class="limitations">
@@ -110,7 +112,7 @@
 
     </main>
 
-    <!-- UPDATED FOOTER SECTION -->
+    <!-- UPDATED FOOTER -->
     <footer>
         <p>© 2024 PRODUCT VIZ | Contact: <a href="mailto:team@productviz.com">team@productviz.com</a></p>
     </footer>
