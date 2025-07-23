@@ -22,7 +22,7 @@ header {
 
 /* --- NEW STYLE FOR HEADER TEXT --- */
 header p {
-    font-size: 0.9em; /* Makes the font smaller */
+    font-size: 1em; /* Makes the font smaller */
     margin-top: 8px;    /* Reduces space above the paragraphs */
     margin-bottom: 8px; /* Reduces space below the paragraphs */
 }
