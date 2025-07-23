@@ -1,34 +1,51 @@
-/* STEP 1: Import the Google Font at the VERY TOP of the file */
+/* Import the Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
 /* General Body & Font Styles */
 body {
     font-family: 'Lato', sans-serif;
-    background-color: #fff5ed;
+    /* The body background is now a neutral off-white */
+    background-color: #f8f9fa; 
     color: #333;
     line-height: 1.6;
     margin: 0;
-    padding: 20px;
+    padding: 0; /* Removed padding to allow header to be full-width */
 }
-header, main, footer {
+
+/* --- NEW: Full-width Header Style --- */
+header {
+    background-color: #fff5ed; /* The color you wanted for the header */
+    padding: 40px 20px; /* Vertical and horizontal padding */
+    text-align: center;
+    margin-bottom: 40px; /* Creates space between header and main content */
+}
+
+/* --- NEW: Style for the header's content wrapper --- */
+.header-content {
     max-width: 700px;
     margin: 0 auto;
+}
+
+/* Main content and footer are centered */
+main, footer {
+    max-width: 700px;
+    margin: 0 auto 40px auto; /* Centered, with bottom margin */
+    padding: 0 20px; /* Padding for mobile screens */
     text-align: center;
 }
-/* --- The old header style block has been removed from here --- */
 
 h1, h2, h3 { 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: #0d1b2a; 
 }
 
-/* --- 'header' has been ADDED to this style group --- */
-header, form, .gallery, .limitations {
+/* The "White Card" style for the form and content sections */
+form, .gallery, .limitations {
     background: #ffffff;
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    margin-top: 30px; /* This now creates space above the header */
+    margin-top: 30px; 
 }
 
 .form-group {
