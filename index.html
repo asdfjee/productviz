@@ -35,11 +35,11 @@
                     <label>2. How do you want to specify your furniture?</label>
                     <div class="radio-group">
                         <input type="radio" id="choice_upload" name="furniture_method" value="upload" checked>
-                        <label for="choice_upload">Upload a photo of the furniture</label>
+                        <label for="choice_upload">Upload a photo of the exact furniture</label>
                     </div>
                     <div class="radio-group">
                         <input type="radio" id="choice_describe" name="furniture_method" value="describe">
-                        <label for="choice_describe">Describe the furniture I want</label>
+                        <label for="choice_describe">Describe the furniture or changes I want</label>
                     </div>
                 </div>
 
@@ -55,7 +55,7 @@
                 <!-- Section for Description (hidden by default) -->
                 <div id="furniture-description-section" style="display: none;">
                     <div class="form-group">
-                        <label for="furniture_description">Describe the furniture (Required)</label>
+                        <label for="furniture_description">Describe the furniture or modifications (Required)</label>
                         <textarea id="furniture_description" name="furniture_description" rows="4" placeholder="e.g., 'A modern green velvet armchair with thin, gold metal legs.' or 'Make the chair from the reference photo an oak wood instead of walnut.'"></textarea>
                     </div>
                     <div class="form-group">
@@ -71,22 +71,79 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="notes">4. Optional: Room/Furniture Dimensions or Notes</label>
-                    <textarea id="notes" name="notes" rows="4" placeholder="e.g., 'The wall is 10ft wide.'"></textarea>
+                    <label for="notes">4. Optional: Additional Notes</label>
+                    <textarea id="notes" name="notes" rows="4" placeholder="e.g., 'The wall is 10ft wide.' or 'Please place against the far wall.'"></textarea>
                 </div>
                 
                 <button type="button" id="next-step-btn">Next Step</button>
             </div>
 
-            <!-- (Step 2 remains the same) -->
+            <!-- STEP 2: PRODUCT CHOICE AND SUBMISSION -->
             <div id="step-2" style="display: none;">
-                <!-- ... Step 2 content is unchanged ... -->
+                <h2>Step 2: Choose Your Product</h2>
+                
+                <div class="form-group">
+                    <label>Choose Your Product:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="product_photo" name="product_choice" value="Photo" checked>
+                        <label for="product_photo">Photo-realistic Image</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="product_movie" name="product_choice" value="Movie">
+                        <label for="product_movie">Short Video Fly-through</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>How should we send it?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="delivery_email" name="delivery_method" value="Email" checked>
+                        <label for="delivery_email">Email</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="delivery_text" name="delivery_method" value="Text">
+                        <label for="delivery_text">Text Message</label>
+                    </div>
+                </div>
+
+                <div id="phone-input-container" class="form-group" style="display: none;">
+                    <label for="customer_phone">Your Phone Number</label>
+                    <input type="tel" id="customer_phone" name="customer_phone" placeholder="123-456-7890">
+                </div>
+                
+                <button type="submit" id="submit-btn">Complete My Order</button>
             </div>
         </form>
-        
-        <!-- (Rest of the page is unchanged) -->
-        <!-- ... Other sections like Gallery, Limitations, Footer ... -->
+
+        <!-- "See How it works" DEMO SECTION -->
+        <section class="gallery">
+            <h2>See How It Works</h2>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/300x200.png?text=Original+Photo" alt="Original photo of the room">
+                <video src="img_0106.mov" controls loop muted autoplay playsinline alt="Generated video showing furniture in the room"></video>
+            </div>
+            <p class="explanation">The video on the right was generated to show the furniture in situ.</p>
+            <a href="/gallery.html" class="gallery-link">View Full Gallery →</a>
+        </section>
+
+
+        <!-- BETA NOTICE SECTION -->
+        <section class="limitations">
+            <h3>Beta Notice & Limitations</h3>
+            <p>
+                Please be aware that PRODUCT VIZ is currently in its beta (testing) phase. This service is primarily intended for design professionals and early adopters to test and provide feedback.
+            </p>
+            <p>
+                While we strive for high accuracy, the final appearance of furniture (scale, perspective, lighting, and texture) may not be perfect. Thank you for your understanding and for helping us improve our platform.
+            </p>
+        </section>
+
     </main>
+
+    <footer>
+        <p>© 2024 PRODUCT VIZ | Contact: <a href="mailto:team@productviz.com">team@productviz.com</a></p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
