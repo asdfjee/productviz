@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style My Space - ProductViz</title>
+    <!-- Link to your single, universal stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- =================================================================== -->
+    <!-- 1. CORRECT HEADER STRUCTURE (Copied from your main page) -->
+    <!-- =================================================================== -->
+    <header>
+        <div class="header-content">
+            <!-- Mobile Menu Button -->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            
+            <!-- Site Title -->
+            <a href="/" class="site-title-link">
+                <h1 class="site-title">PRODUCT VIZ</h1>
+            </a>
+            
+            <!-- Main Navigation Menu -->
+            <nav id="main-menu" class="main-menu">
+                <ul>
+                    <li><a href="/">Visualize Your Space</a></li>
+                    <li><a href="/brainstorm.html">Style My Space</a></li>
+                    <li><a href="/how-it-works.html">How It Works</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- =================================================================== -->
+    <!-- 2. MAIN CONTENT AREA -->
+    <!-- =================================================================== -->
+    <main>
+        <!-- Page-specific content moved here from the broken header -->
+        <div class="page-intro">
+            <h1>Style My Space</h1>
+            <p>Our creative brainstorming service.</p>
+            <p>Just upload a photo of your empty space and describe the style or feeling you're looking for, and we'll do the rest!</p>
+        </div>
+
+        <!-- The form for this page -->
+        <form name="brainstorm-order" method="POST" data-netlify="true" enctype="multipart/form-data">
+            <!-- All your form groups and inputs go here as they were before -->
+            <!-- e.g., <div class="form-group"> ... </div> -->
+        </form>
+
+    </main>
+
+    <footer>
+        <p>© 2024 ProductViz. All rights reserved.</p>
+    </footer>
+
+    <!-- Your existing JavaScript files -->
+    <script src="global.js"></script>
+    <script>
+        // Your existing script for the form submission can remain here
+        const brainstormForm = document.querySelector('form[name="brainstorm-order"]');
+        if (brainstormForm) {
+            const submitBtn = brainstormForm.querySelector('button');
+            brainstormForm.addEventListener('submit', function () {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Submitting...';
+            });
+        }
+    </script>
+
+</body>
+</html>
