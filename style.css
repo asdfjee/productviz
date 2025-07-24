@@ -14,7 +14,6 @@ body {
 /* Full-width Header Style */
 header {
     background-color: #ffffff;
-    /* UPDATED: Doubled the top and bottom padding to increase header height */
     padding: 50px 20px; 
     border-bottom: 1px solid #e9ecef;
     position: sticky;
@@ -189,3 +188,20 @@ button:disabled { background-color: #f5e1d3; cursor: not-allowed; }
 }
 
 .success-page { background: #fff; padding: 40px; border-radius: 8px; margin-top: 40px; text-align: center; }
+
+/* --- Tagline Banner Styles --- */
+.tagline-container {
+    background-color: #523b36; /* Dark brand color for background */
+    color: #ffffff; /* White text for contrast */
+    text-align: center;
+    padding: 20px;
+}
+
+.tagline-container p {
+    margin: 0; /* Removes default paragraph margin */
+    font-size: 1.1rem;
+    font-weight: normal;
+    max-width: 800px; /* Prevents the line from being too wide on large screens */
+    margin-left: auto; /* Helps center the max-width container */
+    margin-right: auto; /* Helps center the max-width container */
+}
