@@ -8,12 +8,29 @@
 </head>
 <body>
 
-    <header>
-        <div class="header-content">
-            <h1>How It Works</h1>
-            <p>We've made getting your custom visualization as easy as possible.</p>
-        </div>
-    </header>
+   <header>
+    <div class="header-content">
+        <!-- Main Navigation Menu -->
+        <nav class="main-nav">
+            <button id="menu-toggle" class="menu-toggle" aria-label="Open Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul id="main-menu" class="main-menu">
+                <li><a href="/">Visualize Your Space</a></li>
+                <li><a href="/brainstorm.html">Style My Space</a></li>
+                <li><a href="/how-it-works.html">How It Works</a></li>
+            </ul>
+        </nav>
+
+        <!-- Site Title -->
+        <a href="/" class="site-title-link"><h1 class="site-title">PRODUCT VIZ</h1></a>
+        
+        <!-- This is an empty placeholder to help center the title -->
+        <div class="header-placeholder"></div>
+    </div>
+</header>
 
     <main>
         <!-- We reuse the ".gallery" class for a nice white box style -->
@@ -40,6 +57,7 @@
             <a href="/" class="gallery-link" style="margin-top: 30px; display: inline-block;">← Back to the Order Form</a>
         </section>
     </main>
-    
+
+<script src="global.js"></script>     
 </body>
 </html>
