@@ -66,9 +66,10 @@ form, .gallery, .limitations {
     margin-top: 30px; 
 }
 
-/* --- NEW STYLE for the Brainstorming Service Box on the homepage --- */
+/* Style for the Brainstorming Service Box on the homepage */
 .service-box {
-    background-color: #e7d8c9; /* A slightly different, warm color */
+    /* --- COLOR UPDATED HERE --- */
+    background-color: #f5fcf7; /* Was #e7d8c9, now a light green */
     color: #523b36;
     padding: 25px;
     border-radius: 8px;
