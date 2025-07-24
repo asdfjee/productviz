@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextStepBtn = document.getElementById('next-step-btn');
     const submitBtn = document.getElementById('submit-btn');
     
-    // Step 1 Inputs
+    // Main Step 1 Inputs
     const spacePhotoInput = document.getElementById('space_photo');
     const spacePreview = document.getElementById('space-preview');
     const emailInput = document.getElementById('customer_email');
@@ -23,6 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const referencePhotoInput = document.getElementById('reference_photo');
     const referencePreview = document.getElementById('reference-preview');
     
+    // Step 2 delivery elements
+    const deliveryMethodRadios = document.querySelectorAll('input[name="delivery_method"]');
+    const phoneInputContainer = document.getElementById('phone-input-container');
+    const phoneInput = document.getElementById('customer_phone');
+
     // --- Initialize required fields based on default choice ---
     furniturePhotoInput.required = true;
     furnitureDescriptionInput.required = false;
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     setupImagePreview(spacePhotoInput, spacePreview);
     setupImagePreview(furniturePhotoInput, furniturePreview);
-    setupImagePreview(referencePhotoInput, referencePreview); // Setup preview for the new optional input
+    setupImagePreview(referencePhotoInput, referencePreview);
 
     // --- NEW: Logic to switch between furniture specification methods ---
     furnitureMethodRadios.forEach(radio => {
@@ -82,6 +87,22 @@ document.addEventListener('DOMContentLoaded', () => {
         step2.style.display = 'block';
     });
     
-    // (The delivery method and submit logic remains the same)
-    // ...
+    // --- Delivery Method Logic (Show/hide phone input) ---
+    deliveryMethodRadios.forEach(radio => {
+        radio.addEventListener('change', (event) => {
+            if (event.target.value === 'Text') {
+                phoneInputContainer.style.display = 'block';
+                phoneInput.required = true;
+            } else {
+                phoneInputContainer.style.display = 'none';
+                phoneInput.required = false;
+            }
+        });
+    });
+    
+    // --- Form Submission Logic (Disable button) ---
+    form.addEventListener('submit', () => {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+    });
 });
