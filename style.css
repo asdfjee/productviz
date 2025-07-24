@@ -14,7 +14,7 @@ body {
 /* Full-width Header Style */
 header {
     background-color: #ffffff;
-    padding: 15px 20px;
+    padding: 25px 20px; /* UPDATED: Increased top/bottom padding */
     border-bottom: 1px solid #e9ecef;
     position: sticky;
     top: 0;
@@ -159,19 +159,15 @@ button:disabled { background-color: #f5e1d3; cursor: not-allowed; }
     }
     .main-menu li {
         padding: 0;
-        margin-left: 25px;
+        margin-left: 30px; /* Optional: Increased spacing between items */
     }
     .main-menu a {
-        font-size: 1rem;
+        font-size: 0.9rem; /* UPDATED: Font size smaller */
     }
     .header-placeholder {
         display: none; /* Hide the placeholder on desktop */
     }
-    .site-title {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
+    /* REMOVED: The .site-title rule that used 'position: absolute' was deleted to fix alignment. */
 
     /* other desktop styles */
     .gallery-item {
