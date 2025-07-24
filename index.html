@@ -3,127 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRODUCT VIZ</title>
+    <title>ProductViz - Visualize Your Space</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-    <div class="header-content">
-        <!-- Main Navigation Menu -->
-        <nav class="main-nav">
-            <button id="menu-toggle" class="menu-toggle" aria-label="Open Menu">
+        <div class="header-content">
+            <!-- Mobile Menu Button -->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open Menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
-            <ul id="main-menu" class="main-menu">
-                <li><a href="/">Visualize Your Space</a></li>
-                <li><a href="/brainstorm.html">Style My Space</a></li>
-                <li><a href="/how-it-works.html">How It Works</a></li>
-            </ul>
-        </nav>
-
-        <!-- Site Title -->
-        <a href="/" class="site-title-link"><h1 class="site-title">PRODUCT VIZ</h1></a>
-        
-        <!-- This is an empty placeholder to help center the title -->
-        <div class="header-placeholder"></div>
-    </div>
-</header>
+            
+            <!-- Site Title -->
+            <a href="/" class="site-title-link">
+                <h1 class="site-title">PRODUCT VIZ</h1>
+            </a>
+            
+            <!-- Main Navigation Menu (UPDATED with corrected link) -->
+            <nav id="main-menu" class="main-menu">
+                <ul>
+                    <li><a href="/">Visualize Your Space</a></li>
+                    <li><a href="/stylemyspace.html">Style My Space</a></li> 
+                    <li><a href="/how-it-works.html">How It Works</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <main>
-        <!-- This is the main form for placing specific furniture -->
-        <form name="order" method="POST" data-netlify="true" enctype="multipart/form-data" action="/success.html">
-            <!-- (The entire form from the previous step is here) -->
-            <div id="step-1">
-                <h2>Visualize a Specific Product</h2>
-                <div class="form-group">
-                    <label for="space_photo">1. Upload a Photo of Your Space (Required)</label>
-                    <input type="file" id="space_photo" name="space_photo" accept="image/*" required>
-                    <img id="space-preview" class="image-preview" src="#" alt="Your space photo preview" />
-                </div>
-                <div class="form-group choice-group">
-                    <label>2. How do you want to specify your furniture?</label>
-                    <div class="radio-group">
-                        <input type="radio" id="choice_upload" name="furniture_method" value="upload" checked>
-                        <label for="choice_upload">Upload a photo of the exact furniture</label>
-                    </div>
-                    <div class="radio-group">
-                        <input type="radio" id="choice_describe" name="furniture_method" value="describe">
-                        <label for="choice_describe">Describe the furniture or changes I want</label>
-                    </div>
-                </div>
-                <div id="furniture-photo-section">
-                    <div class="form-group">
-                        <label for="furniture_photo">Upload Photo of Furniture (Required)</label>
-                        <input type="file" id="furniture_photo" name="furniture_photo" accept="image/*">
-                        <img id="furniture-preview" class="image-preview" src="#" alt="Your furniture photo preview" />
-                    </div>
-                </div>
-                <div id="furniture-description-section" style="display: none;">
-                    <div class="form-group">
-                        <label for="furniture_description">Describe the furniture or modifications (Required)</label>
-                        <textarea id="furniture_description" name="furniture_description" rows="4" placeholder="e.g., 'A modern green velvet armchair with thin, gold metal legs.' or 'Make the chair from the reference photo an oak wood instead of walnut.'"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="reference_photo">Upload a Reference/Inspiration Photo (Optional)</label>
-                        <input type="file" id="reference_photo" name="reference_photo" accept="image/*">
-                        <img id="reference-preview" class="image-preview" src="#" alt="Your reference photo preview" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="customer_email">3. Your Email Address (Required)</label>
-                    <input type="email" id="customer_email" name="customer_email" placeholder="you@example.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="notes">4. Optional: Additional Notes</label>
-                    <textarea id="notes" name="notes" rows="4" placeholder="e.g., 'The wall is 10ft wide.' or 'Please place against the far wall.'"></textarea>
-                </div>
-                <button type="button" id="next-step-btn">Next Step</button>
+        <!-- Homepage-specific content -->
+        <div class="page-intro">
+            <h1>Visualize Your Space</h1>
+            <p>Upload a photo of your product and see it in a new environment instantly.</p>
+        </div>
+
+        <!-- The main form for the homepage -->
+        <form name="visualize-order" method="POST" data-netlify="true">
+            <!-- All your form-groups for the homepage go here -->
+             <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" name="email" id="email" required>
             </div>
-            <!-- (Step 2 is unchanged) -->
-            <div id="step-2" style="display: none;">
-                <!-- ... Step 2 content ... -->
-            </div>
+            <button type="submit">Visualize Now</button>
         </form>
-
-        <!-- NEW SECTION: BRAINSTORMING SERVICE -->
-        <section class="service-box">
-            <h2>Need Ideas? Let Us Brainstorm For You.</h2>
-            <p>Not sure what you want? Describe the vibe you're going for, and our team will generate a fully furnished concept to inspire you.</p>
-            <a href="/brainstorm.html" class="gallery-link">Style My Space →</a>
-        </section>
-
-        <!-- "See How it works" DEMO SECTION -->
-        <section class="gallery">
-            <h2>See How It Works</h2>
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/300x200.png?text=Original+Photo" alt="Original photo of the room">
-                <video src="img_0106.mov" controls loop muted autoplay playsinline alt="Generated video showing furniture in the room"></video>
-            </div>
-            <p class="explanation">The video on the right was generated to show the furniture in situ.</p>
-            <a href="/gallery.html" class="gallery-link">View Full Gallery →</a>
-        </section>
-
-
-        <!-- BETA NOTICE SECTION -->
-        <section class="limitations">
-            <h3>Beta Notice & Limitations</h3>
-            <p>
-                Please be aware that PRODUCT VIZ is currently in its beta (testing) phase. This service is primarily intended for design professionals and early adopters to test and provide feedback.
-            </p>
-            <p>
-                While we strive for high accuracy, the final appearance of furniture (scale, perspective, lighting, and texture) may not be perfect. Thank you for your understanding and for helping us improve our platform.
-            </p>
-        </section>
     </main>
 
     <footer>
-        <p>© 2024 PRODUCT VIZ | Contact: <a href="mailto:team@productviz.com">team@productviz.com</a></p>
+        <p>© 2024 ProductViz. All rights reserved.</p>
     </footer>
 
+    <!-- Universal JavaScript file -->
     <script src="global.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>
