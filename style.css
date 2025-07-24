@@ -66,12 +66,24 @@ form, .gallery, .limitations {
     margin-top: 30px; 
 }
 
+/* --- NEW STYLE for the Brainstorming Service Box on the homepage --- */
+.service-box {
+    background-color: #e7d8c9; /* A slightly different, warm color */
+    color: #523b36;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 40px;
+    text-align: center;
+}
+.service-box h2 {
+    color: #523b36;
+}
+
 .form-group {
     margin-bottom: 20px;
     text-align: left;
 }
 
-/* NEW STYLE for the furniture choice group */
 .choice-group {
     background-color: #f8f9fa;
     padding: 20px;
@@ -81,7 +93,7 @@ form, .gallery, .limitations {
     margin-bottom: 25px;
 }
 .choice-group label {
-    font-weight: normal; /* Makes radio button labels less bold */
+    font-weight: normal; 
 }
 
 label {
