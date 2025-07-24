@@ -46,13 +46,13 @@ header {
     width: 50px; 
 }
 
-/* UPDATED: Style for the tagline paragraph below the header content */
+/* Style for the tagline paragraph below the header content */
 .header-tagline {
-    font-size: 0.9rem;      /* UPDATED: Font size is smaller */
+    font-size: 0.9rem;
     color: #6c757d; 
-    margin-top: 60px;       /* UPDATED: Increased top margin for more space */
-    margin-bottom: 400;
-    max-width: 800px;       /* UPDATED: Wider to fit on a single line */
+    margin-top: 60px;
+    margin-bottom: 40px; /* CORRECTED: Fixed typo from '400' to '40px' */
+    max-width: 800px;
     text-align: center;
 }
 
@@ -167,7 +167,7 @@ button:disabled { background-color: #f5e1d3; cursor: not-allowed; }
     .main-menu {
         display: flex;
         position: absolute;
-        right: 0;
+        right: 20px; /* UPDATED: Changed from 0 to 20px to shift it left */
         top: 50%;
         transform: translateY(-50%);
         background: none;
