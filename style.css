@@ -14,7 +14,11 @@ body {
 /* Full-width Header Style */
 header {
     background-color: #ffffff;
-    padding: 50px 20px; 
+    /* UPDATED: Changed layout to stack items vertically and increased top padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px 30px; 
     border-bottom: 1px solid #e9ecef;
     position: sticky;
     top: 0;
@@ -23,6 +27,7 @@ header {
 
 .header-content {
     max-width: 1200px;
+    width: 100%; /* Required for flex parent */
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -31,7 +36,8 @@ header {
 }
 
 .site-title {
-    font-size: 1.7rem;
+    /* UPDATED: Increased font size */
+    font-size: 2.2rem;
     color: #523b36;
     margin: 0;
 }
@@ -42,13 +48,14 @@ header {
     width: 50px; 
 }
 
-/* NEW: Style for the tagline paragraph inside the header */
-.tagline {
-    font-size: 0.9rem; /* Smaller font size */
-    color: #523b36;
-    margin-top: 5px; /* Adds a little space below the main title */
+/* NEW: Style for the tagline paragraph below the header content */
+.header-tagline {
+    font-size: 1rem;
+    color: #6c757d; /* Softer text color */
+    margin-top: 15px; /* Space between title row and tagline */
     margin-bottom: 0;
-    max-width: 350px; /* Prevents it from getting too wide */
+    max-width: 450px;
+    text-align: center;
 }
 
 /* --- Navigation Menu Styles (Mobile First) --- */
@@ -180,17 +187,20 @@ button:disabled { background-color: #f5e1d3; cursor: not-allowed; }
     .header-placeholder {
         display: none;
     }
-
-    /* UPDATED: This rule now targets the container for the title and tagline */
-    .title-tagline-container {
+    .site-title {
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        text-align: center; /* This centers the title and tagline */
+    }
+
+    /* other desktop styles */
+    .gallery-item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        align-items: center;
     }
 }
 
 .success-page { background: #fff; padding: 40px; border-radius: 8px; margin-top: 40px; text-align: center; }
-
-/* The old .tagline-container CSS that was here has been REMOVED. */
