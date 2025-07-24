@@ -27,7 +27,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative; /* This is the positioning anchor for the title and menu */
+    position: relative; 
 }
 
 .site-title {
@@ -39,7 +39,16 @@ header {
     text-decoration: none;
 }
 .header-placeholder {
-    width: 50px; /* Same width as menu button */
+    width: 50px; 
+}
+
+/* NEW: Style for the tagline paragraph inside the header */
+.tagline {
+    font-size: 0.9rem; /* Smaller font size */
+    color: #523b36;
+    margin-top: 5px; /* Adds a little space below the main title */
+    margin-bottom: 0;
+    max-width: 350px; /* Prevents it from getting too wide */
 }
 
 /* --- Navigation Menu Styles (Mobile First) --- */
@@ -171,37 +180,17 @@ button:disabled { background-color: #f5e1d3; cursor: not-allowed; }
     .header-placeholder {
         display: none;
     }
-    .site-title {
+
+    /* UPDATED: This rule now targets the container for the title and tagline */
+    .title-tagline-container {
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-    }
-
-    /* other desktop styles */
-    .gallery-item {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        align-items: center;
+        text-align: center; /* This centers the title and tagline */
     }
 }
 
 .success-page { background: #fff; padding: 40px; border-radius: 8px; margin-top: 40px; text-align: center; }
 
-/* --- Tagline Banner Styles --- */
-.tagline-container {
-    background-color: #523b36; /* Dark brand color for background */
-    color: #ffffff; /* White text for contrast */
-    text-align: center;
-    padding: 20px;
-}
-
-.tagline-container p {
-    margin: 0; /* Removes default paragraph margin */
-    font-size: 1.1rem;
-    font-weight: normal;
-    max-width: 800px; /* Prevents the line from being too wide on large screens */
-    margin-left: auto; /* Helps center the max-width container */
-    margin-right: auto; /* Helps center the max-width container */
-}
+/* The old .tagline-container CSS that was here has been REMOVED. */
