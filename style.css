@@ -50,8 +50,8 @@ header {
 .header-tagline {
     font-size: 0.9rem;      /* UPDATED: Font size is smaller */
     color: #6c757d; 
-    margin-top: 25px;       /* UPDATED: Increased top margin for more space */
-    margin-bottom: 0;
+    margin-top: 40px;       /* UPDATED: Increased top margin for more space */
+    margin-bottom: 250;
     max-width: 800px;       /* UPDATED: Wider to fit on a single line */
     text-align: center;
 }
