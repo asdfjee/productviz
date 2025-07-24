@@ -1,61 +1,148 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProductViz - Visualize Your Space</title>
-    <link rel="stylesheet" href="style.css">
-</head>
 <body>
 
-    <header>
-        <div class="header-content">
-            <!-- Mobile Menu Button -->
-            <button class="menu-toggle" id="menu-toggle" aria-label="Open Menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            
-            <!-- Site Title -->
-            <a href="/" class="site-title-link">
-                <h1 class="site-title">PRODUCT VIZ</h1>
-            </a>
-            
-            <!-- Main Navigation Menu -->
-            <nav id="main-menu" class="main-menu">
-                <ul>
-                    <li><a href="/">Visualize Your Space</a></li>
-                    <li><a href="/stylemyspace.html">Style My Space</a></li> 
-                    <li><a href="/how-it-works.html">How It Works</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<header>
+        <!-- This new div wraps the content to keep it centered -->
+<div class="header-content">
+<h1>PRODUCT VIZ</h1>
+            <p class="tagline">Product Visualization; see any piece of furniture in your room.</p>
+            <p>Product Visualization; see any piece of furniture in your room.</p>
+<p>Below, you can upload a photo of your space, and a photo of the product to get started!</p>
+<p><a href="/how-it-works.html">Learn more about how it works</a></p>
+</div>
+</header>
 
-    <main>
-        <!-- Homepage-specific content -->
-        <div class="page-intro">
-            <h1>Visualize Your Space</h1>
-            <p>Upload a photo of your product and see it in a new environment instantly.</p>
-        </div>
+<main>
+        <!-- This form is set up for Netlify -->
+<form name="order" method="POST" data-netlify="true" enctype="multipart/form-data" action="/success.html">
+            <!-- (The form code remains the same, so it's omitted for brevity) -->
 
-        <!-- The main form for the homepage -->
-        <form name="visualize-order" method="POST" data-netlify="true">
-            <!-- All your form-groups for the homepage go here -->
-             <div class="form-group">
-                <label for="email">Your Email:</label>
-                <input type="email" name="email" id="email" required>
+<!-- STEP 1: UPLOAD AND DETAILS -->
+<div id="step-1">
+                <h2>Step 1: Upload Your Photos</h2>
+                <h2>Step 1: Your Space & Furniture</h2>
+
+<div class="form-group">
+<label for="space_photo">1. Upload a Photo of Your Space (Required)</label>
+<input type="file" id="space_photo" name="space_photo" accept="image/*" required>
+<img id="space-preview" class="image-preview" src="#" alt="Your space photo preview" />
+</div>
+
+                <div class="form-group">
+                    <label for="furniture_photo">2. Upload a Photo of Your Furniture (Required)</label>
+                    <input type="file" id="furniture_photo" name="furniture_photo" accept="image/*" required>
+                    <img id="furniture-preview" class="image-preview" src="#" alt="Your furniture photo preview" />
+                <!-- NEW: FURNITURE CHOICE SECTION -->
+                <div class="form-group choice-group">
+                    <label>2. How do you want to specify your furniture?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="choice_upload" name="furniture_method" value="upload" checked>
+                        <label for="choice_upload">Upload a photo of the furniture</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="choice_describe" name="furniture_method" value="describe">
+                        <label for="choice_describe">Describe the furniture I want</label>
+                    </div>
+                </div>
+
+                <!-- Section for Photo Upload -->
+                <div id="furniture-photo-section">
+                    <div class="form-group">
+                        <label for="furniture_photo">Upload Photo of Furniture (Required)</label>
+                        <input type="file" id="furniture_photo" name="furniture_photo" accept="image/*">
+                        <img id="furniture-preview" class="image-preview" src="#" alt="Your furniture photo preview" />
+                    </div>
+                </div>
+
+                <!-- Section for Description (hidden by default) -->
+                <div id="furniture-description-section" style="display: none;">
+                    <div class="form-group">
+                        <label for="furniture_description">Describe the furniture (Required)</label>
+                        <textarea id="furniture_description" name="furniture_description" rows="4" placeholder="e.g., 'A modern green velvet armchair with thin, gold metal legs.' or 'Make the chair from the reference photo an oak wood instead of walnut.'"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="reference_photo">Upload a Reference/Inspiration Photo (Optional)</label>
+                        <input type="file" id="reference_photo" name="reference_photo" accept="image/*">
+                        <img id="reference-preview" class="image-preview" src="#" alt="Your reference photo preview" />
+                    </div>
+</div>
+
+<div class="form-group">
+@@ -51,73 +78,15 @@ <h2>Step 1: Upload Your Photos</h2>
+<button type="button" id="next-step-btn">Next Step</button>
+</div>
+
+            <!-- STEP 2: PRODUCT CHOICE AND SUBMISSION -->
+            <!-- (Step 2 remains the same) -->
+<div id="step-2" style="display: none;">
+                <h2>Step 2: Choose Your Product</h2>
+                
+                <div class="form-group">
+                    <label>Choose Your Product:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="product_photo" name="product_choice" value="Photo" checked>
+                        <label for="product_photo">Photo-realistic Image</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="product_movie" name="product_choice" value="Movie">
+                        <label for="product_movie">Short Video Fly-through</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>How should we send it?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="delivery_email" name="delivery_method" value="Email" checked>
+                        <label for="delivery_email">Email</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="delivery_text" name="delivery_method" value="Text">
+                        <label for="delivery_text">Text Message</label>
+                    </div>
+                </div>
+
+                <div id="phone-input-container" class="form-group" style="display: none;">
+                    <label for="customer_phone">Your Phone Number</label>
+                    <input type="tel" id="customer_phone" name="customer_phone" placeholder="123-456-7890">
+                </div>
+                
+                <button type="submit" id="submit-btn">Complete My Order</button>
+                <!-- ... Step 2 content is unchanged ... -->
+</div>
+</form>
+
+        <!-- "See How it works" DEMO SECTION -->
+        <section class="gallery">
+            <h2>See How It Works</h2>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/300x200.png?text=Original+Photo" alt="Original photo of the room">
+                <video src="https://i.imgur.com/uVj4n52.mp4" controls loop muted autoplay playsinline alt="Generated video showing furniture in the room"></video>
             </div>
-            <button type="submit">Visualize Now</button>
-        </form>
-    </main>
+            <p class="explanation">The video on the right was generated to show the furniture in situ.</p>
+            <a href="/gallery.html" class="gallery-link">View Full Gallery →</a>
+        </section>
 
+
+        <!-- BETA NOTICE SECTION -->
+        <section class="limitations">
+            <h3>Beta Notice & Limitations</h3>
+            <p>
+                Please be aware that PRODUCT VIZ is currently in its beta (testing) phase. This service is primarily intended for design professionals and early adopters to test and provide feedback.
+            </p>
+            <p>
+                While we strive for high accuracy, the final appearance of furniture (scale, perspective, lighting, and texture) may not be perfect. Thank you for your understanding and for helping us improve our platform.
+            </p>
+        </section>
+
+        
+        <!-- (Rest of the page is unchanged) -->
+        <!-- ... Other sections like Gallery, Limitations, Footer ... -->
+</main>
+
+    <!-- UPDATED FOOTER -->
     <footer>
-        <p>© 2024 ProductViz. All rights reserved.</p>
+        <p>© 2024 PRODUCT VIZ | Contact: <a href="mailto:team@productviz.com">team@productviz.com</a></p>
     </footer>
 
-    <!-- Universal JavaScript file -->
-    <script src="global.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
