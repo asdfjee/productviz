@@ -27,11 +27,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative; /* UPDATED: Added for positioning context */
+    position: relative; /* This is the positioning anchor for the title and menu */
 }
 
 .site-title {
-    font-size: 1.7rem; /* UPDATED: Increased font size */
+    font-size: 1.7rem;
     color: #523b36;
     margin: 0;
 }
@@ -152,12 +152,16 @@ button:disabled { background-color: #f5e1d3; cursor: not-allowed; }
     }
     .main-menu {
         display: flex;
-        position: static;
+        /* UPDATED: Aligned to the right and vertically centered */
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
         background: none;
         box-shadow: none;
         width: auto;
         padding: 0;
-        margin-left: auto; /* UPDATED: Pushes menu to the right */
     }
     .main-menu li {
         padding: 0;
@@ -169,12 +173,14 @@ button:disabled { background-color: #f5e1d3; cursor: not-allowed; }
     .header-placeholder {
         display: none;
     }
-    /* UPDATED: Rule re-added to center the title */
     .site-title {
+        /* UPDATED: Centered perfectly in the header, horizontally and vertically */
         position: absolute;
         left: 50%;
-        transform: translateX(-50%);
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
+
     /* other desktop styles */
     .gallery-item {
         display: grid;
